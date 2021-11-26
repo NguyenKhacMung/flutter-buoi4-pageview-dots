@@ -21,17 +21,45 @@ class _HomeState extends State<Home> {
     });
   }
 
-  // List<Widget> _pages = [
-  //   Container(
-  //     color: Colors.blue,
-  //   ),
-  //   Container(
-  //     color: Colors.amber,
-  //   ),
-  // ];
+  void _onChangePage(int index) {
+    _pageController.animateToPage(
+      index,
+      duration: const Duration(milliseconds: 400),
+      curve: Curves.easeInOut,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> _pages = [
+      Flash(
+        Continue: () {
+          _onChangePage(1);
+        },
+        Skip: () {
+          _onChangePage(2);
+        },
+        title: "GPS Tracking",
+        text: "Loved the class!...",
+        active: _selectedIndex,
+        img: "images/img1.png",
+      ),
+      Flash(
+        Continue: () {
+          _onChangePage(2);
+        },
+        Skip: () {
+          _onChangePage(2);
+        },
+        title: "GPS Tracking",
+        text: "Loved the class!...",
+        active: _selectedIndex,
+        img: "images/img2.png",
+      ),
+      Start(
+        active: _selectedIndex,
+      ),
+    ];
     return Scaffold(
       // appBar: AppBar(
       //   title: const Text('Home'),
@@ -39,51 +67,7 @@ class _HomeState extends State<Home> {
       body: PageView(
         controller: _pageController,
         onPageChanged: _onItemTapped,
-        children: <Widget>[
-          Flash(
-            Continue: () {
-              _pageController.animateToPage(
-                1,
-                duration: const Duration(milliseconds: 400),
-                curve: Curves.easeInOut,
-              );
-            },
-            Skip: () {
-              _pageController.animateToPage(
-                2,
-                duration: const Duration(milliseconds: 400),
-                curve: Curves.easeInOut,
-              );
-            },
-            title: "GPS Tracking",
-            text: "Loved the class!...",
-            active: _selectedIndex,
-            img: "images/img1.png",
-          ),
-          Flash(
-            Continue: () {
-              _pageController.animateToPage(
-                2,
-                duration: const Duration(milliseconds: 400),
-                curve: Curves.easeInOut,
-              );
-            },
-            Skip: () {
-              _pageController.animateToPage(
-                2,
-                duration: const Duration(milliseconds: 400),
-                curve: Curves.easeInOut,
-              );
-            },
-            title: "GPS Tracking",
-            text: "Loved the class!...",
-            active: _selectedIndex,
-            img: "images/img2.png",
-          ),
-          Start(
-            active: _selectedIndex,
-          ),
-        ],
+        children: _pages,
       ),
     );
   }
