@@ -108,8 +108,10 @@ class _SingUpState extends State<SingUp> {
                     ),
                     btn(
                         color: Color(0xfffe734c),
-                        Action: () {},
-                        text: "Sing up")
+                        Action: () {
+                          Navigator.pop(context);
+                        },
+                        text: "Sing up"),
                   ],
                 ),
               ),
