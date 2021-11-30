@@ -51,7 +51,11 @@ class _ForgotPassState extends State<ForgotPass> {
               child: Form(
                 child: Column(
                   children: [
-                    Input(obscureText: false),
+                    Input(
+                      obscureText: false,
+                      hintText: 'hellobesnik@gmail.com',
+                      textAlign: TextAlign.center,
+                    ),
                     SizedBox(
                       height: 40,
                     ),

@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
 class Input extends StatefulWidget {
-  const Input({Key? key, required this.obscureText}) : super(key: key);
+  const Input(
+      {Key? key,
+      required this.obscureText,
+      required this.hintText,
+      required this.textAlign})
+      : super(key: key);
   final bool obscureText;
+  final String hintText;
+  final TextAlign textAlign;
   @override
   _InputState createState() => _InputState();
 }
@@ -11,6 +18,7 @@ class _InputState extends State<Input> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      textAlign: widget.textAlign,
       obscureText: widget.obscureText,
       decoration: InputDecoration(
         filled: true,
@@ -24,6 +32,7 @@ class _InputState extends State<Input> {
           ),
         ),
         border: const OutlineInputBorder(),
+        hintText: widget.hintText,
       ),
     );
   }

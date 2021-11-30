@@ -56,7 +56,11 @@ class _SingInState extends State<SingIn> {
                     SizedBox(
                       height: 5,
                     ),
-                    Input(obscureText: false),
+                    Input(
+                      obscureText: false,
+                      hintText: 'hellobesnik@gmail.com',
+                      textAlign: TextAlign.left,
+                    ),
                     SizedBox(
                       height: 30,
                     ),
@@ -67,7 +71,11 @@ class _SingInState extends State<SingIn> {
                     SizedBox(
                       height: 5,
                     ),
-                    Input(obscureText: !toggle),
+                    Input(
+                      obscureText: !toggle,
+                      hintText: '***********',
+                      textAlign: TextAlign.left,
+                    ),
                     SizedBox(
                       height: 20,
                     ),

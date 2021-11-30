@@ -56,7 +56,11 @@ class _SingUpState extends State<SingUp> {
                     SizedBox(
                       height: 5,
                     ),
-                    Input(obscureText: false),
+                    Input(
+                      obscureText: false,
+                      hintText: 'hellobesnik@gmail.com',
+                      textAlign: TextAlign.left,
+                    ),
                     SizedBox(
                       height: 30,
                     ),
@@ -67,7 +71,11 @@ class _SingUpState extends State<SingUp> {
                     SizedBox(
                       height: 5,
                     ),
-                    Input(obscureText: !toggle),
+                    Input(
+                      obscureText: !toggle,
+                      hintText: '***********',
+                      textAlign: TextAlign.left,
+                    ),
                     SizedBox(
                       height: 10,
                     ),
@@ -78,7 +86,11 @@ class _SingUpState extends State<SingUp> {
                     SizedBox(
                       height: 5,
                     ),
-                    Input(obscureText: false),
+                    Input(
+                      obscureText: false,
+                      hintText: '+880-1777-138-513',
+                      textAlign: TextAlign.left,
+                    ),
                     SizedBox(
                       height: 30,
                     ),
